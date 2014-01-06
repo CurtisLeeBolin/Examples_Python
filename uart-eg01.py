@@ -19,5 +19,10 @@ uart = serial.Serial('/dev/ttyUSB0', baudrate=115200, timeout=1)
 while True:
 	uart.write(b'\r\nSay something: ')
 	line = readlineCR(uart)
-	lineStr = '\r\nYou sent     : {}'.format(line.decode('utf-8'))
-	uart.write(lineStr.encode('utf-8'))
+	if line != b'exit\r':
+		lineStr = '\r\nYou sent     : {}'.format(line.decode('utf-8'))
+		uart.write(lineStr.encode('utf-8'))
+	else:
+		uart.write(b'\r\nexiting\r\n')
+		uart.close()
+		exit(0)
