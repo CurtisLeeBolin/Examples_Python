@@ -1,5 +1,5 @@
 #!/bin/python3
-# hte.py
+# URL_title_extractor.py
 # html title extractor with The Open Graph protocol support
 #
 #
