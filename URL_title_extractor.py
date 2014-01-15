@@ -44,7 +44,7 @@ try:
 	response = urllib.request.urlopen('http://instagram.com/sarah3llen', timeout=5)
 	contentType = response.getheader('Content-Type')
 
-	if 'text/html' == contentType:
+	if 'text/html' in contentType:
 		data = response.read()
 		html = data.decode('utf-8')
 
