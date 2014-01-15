@@ -1,7 +1,6 @@
 #!/bin/python3
-# URL_title_extractor.py
-# URL title extractor with The Open Graph protocol support
-#
+# hte.py
+# html title extractor with The Open Graph protocol support
 #
 #
 # Many sites like Instagram use The Open Graph protocol for the title.
@@ -41,15 +40,23 @@ class MyHTMLParser(html.parser.HTMLParser):
 
 parser = MyHTMLParser()
 
-response = urllib.request.urlopen('http://instagram.com/sarah3llen')
-data = response.read()
-html = data.decode('utf-8')
+try:
+	response = urllib.request.urlopen('http://instagram.com/sarah3llen', timeout=5)
+	contentType = response.getheader('Content-Type')
 
-parser.feed(html)
+	if 'text/html' == contentType:
+		data = response.read()
+		html = data.decode('utf-8')
 
-if parser.ogpTitle:
-	title = parser.ogpTitle
-else:
-	title = parser.title
+		parser.feed(html)
+
+		if parser.ogpTitle:
+			title = parser.ogpTitle
+		else:
+			title = parser.title
+	else:
+		title = None
+except:
+	title =  None
 
 print(title)
