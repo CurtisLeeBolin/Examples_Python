@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 # URL_title_extractor.py
 # html title extractor with The Open Graph protocol support
 #
