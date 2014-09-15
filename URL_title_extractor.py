@@ -70,4 +70,5 @@ def main():
 
 	print(title)
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+	main()
