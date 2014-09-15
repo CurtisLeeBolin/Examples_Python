@@ -1,7 +1,7 @@
 Examples_Python
 ===========
 
-Just some python programs I have written for reference.
+Just some python programs and related files I have written for reference.
 
 Licenses
 --------
