@@ -9,7 +9,7 @@
 # <title>Instagram</title>
 # <meta property="og:title" content="sarah3llen on Instagram" />
 ########################################################################
-# In the above example you can see there is a title tag and meta tag
+# In the above example you can see there is a title tag and a meta tag
 # with property="og:title".  The OGP title is more descriptive and is
 # the one a modern browser will display in the title bar.
 
