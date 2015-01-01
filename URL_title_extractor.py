@@ -58,7 +58,7 @@ def main():
 
 			parser.feed(html)
 
-			if parser.ogpTitle:
+			if parser.ogpTitle.__len__() > parser.title.__len__():
 				title = parser.ogpTitle
 			else:
 				title = parser.title.replace('\n', '')
