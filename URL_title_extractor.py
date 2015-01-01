@@ -39,7 +39,6 @@ class MyHTMLParser(html.parser.HTMLParser):
 			self.title = data
 
 
-
 def main():
 	import sys
 	parser = MyHTMLParser()
@@ -62,7 +61,7 @@ def main():
 			if parser.ogpTitle:
 				title = parser.ogpTitle
 			else:
-				title = parser.title
+				title = parser.title.replace('\n', '')
 		else:
 			title = None
 	except:
